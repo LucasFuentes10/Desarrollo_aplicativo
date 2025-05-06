@@ -17,5 +17,8 @@
     "url": "https://github.com/LucasFuentes10/desarrollo-aplicativo/issues"
   },
   "homepage": "https://github.com/LucasFuentes10/desarrollo-aplicativo#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
