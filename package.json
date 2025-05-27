@@ -3,29 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node index.js",
-    "lint": "eslint ."
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LucasFuentes10/desarrollo-aplicativo.git"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Lucas",
   "license": "ISC",
-  "type": "module",
   "bugs": {
     "url": "https://github.com/LucasFuentes10/desarrollo-aplicativo/issues"
   },
   "homepage": "https://github.com/LucasFuentes10/desarrollo-aplicativo#readme",
-  "description": "",
-  "dependencies": {
-    "bcrypt": "^6.0.0",
-    "express": "^5.1.0"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.26.0",
-    "eslint": "^9.26.0"
-  }
+  "description": ""
 }

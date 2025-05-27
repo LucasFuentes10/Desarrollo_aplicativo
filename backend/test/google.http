@@ -1,9 +1,0 @@
-GET http:/www.google.com
-
-###
-POST http://localhost
-
-{
-    "username": "adain",
-    "password": "1234"
-}

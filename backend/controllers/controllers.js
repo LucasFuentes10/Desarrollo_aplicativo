@@ -1,1 +1,5 @@
-import {login} from './login.js';
+import { login } from './login.js';
+
+export function controllers(app) {
+    login(app);
+}
