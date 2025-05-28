@@ -1,6 +1,6 @@
 const dependencies = {};
 
-export function getDpendencies(name){ 
+export function getDependencies(name){ 
     if (!dependencies[name]) {
         throw new Error(`Dependency ${name} not found.`);
     }
