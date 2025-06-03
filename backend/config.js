@@ -6,7 +6,7 @@ de config.js
 import configLocal from './config.local.js';
 
 var config ={
-    port: 3005,
+    port: 3000,
     ...configLocal,
 }
 

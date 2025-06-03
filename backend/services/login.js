@@ -1,8 +1,10 @@
 import { InvalidArgumentException } from "../exceptions/invalid_argument_exception.js";
 import { InvalidCredentialsException } from "../exceptions/invalid_credentials_exception.js";
-import { UserService } from "./user.js";
-import { getDependencies } from "../libs/dependencies.js";
-import config  from "./config.js";
+import { getDependency } from "../libs/dependencies.js";
+import config  from "../config.js";
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+
 export class LoginService {
     static async login(credentials){
     if (!credentials 
@@ -13,29 +15,36 @@ export class LoginService {
         )
         throw new InvalidArgumentException();
 
-        const UserServiceme = getDependencies('UserService');
+        const UserServiceme = getDependency('UserService');
         const user = await UserServiceme.getSingleOrNullByUsername(credentials.username);
      if(!user)
         throw new InvalidCredentialsException();
     
-        console.log('calculando hash');
-        const hash = await bcrypt.hash('1234', 20);
-        console.log(hash); 
+        //console.log('calculando hash');
+        //const hash = await bcrypt.hash('1234', 20);
+        //console.log(hash); 
     
-    if (credentials.password !== '1234')
+
+    
+       
+    if (!(await bcrypt.compare(credentials.password, user.hashpassword))) 
+
         throw new InvalidCredentialsException();
-    const token = JsonWebTokenError.sign(
-        { userId: user.id, 
-          username: user.username
-        
-        },
-        config.jwtKey,
-        {
-            expiresIn: '1h'
-        }
-    )
-    return {
-        token: 'Token de acceso'
-    };
+
+        const token = jwt.sing(
+            {
+            userId: user.id,
+             username: user.username,
+             fullName: user.fullName,
+             roles:user.roles,
+            },
+            config.jwtKey,
+            {
+                expiresIn: '1h'
+            }
+        );
+
+        return {token };
+   
     }
 }

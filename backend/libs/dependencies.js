@@ -1,15 +1,14 @@
 const dependencies = {};
 
-export function getDependencies(name){ 
+export function getDependency(name){ 
     if (!dependencies[name]) {
         throw new Error(`Dependency ${name} not found.`);
     }
     
     return dependencies[name];
 }
-
 export function addDependency(name, dependency){
-    if (dependencies[name]) {
+    if (dependency[name]) {
         throw new Error(`Dependency ${name} already exists.`);
     }
 
