@@ -16,7 +16,6 @@
   "author": "",
   "license": "ISC",
   "type": "module",
-  
   "bugs": {
     "url": "https://github.com/LucasFuentes10/desarrollo-aplicativo/issues"
   },
@@ -25,7 +24,8 @@
   "dependencies": {
     "bcrypt": "^6.0.0",
     "express": "^5.1.0",
-    "jsonwebtoken": "^9.0.2"
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.15.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.26.0",

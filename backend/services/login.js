@@ -21,17 +21,17 @@ export class LoginService {
         throw new InvalidCredentialsException();
     
         //console.log('calculando hash');
-        //const hash = await bcrypt.hash('1234', 20);
+        //const hash = await bcrypt.hash('1234', 10);
         //console.log(hash); 
     
 
     
        
-    if (!(await bcrypt.compare(credentials.password, user.hashpassword))) 
+    if (!(await bcrypt.compare(credentials.password, user.hashPassword))) 
 
         throw new InvalidCredentialsException();
 
-        const token = jwt.sing(
+        const token = jwt.sign(
             {
             userId: user.id,
              username: user.username,

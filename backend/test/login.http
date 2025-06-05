@@ -1,10 +1,11 @@
+
 POST http://localhost:3000/api/login
 Content-Type: application/json
 Accept: application/json
 
 {
-    "username": "operator",
-    "password": "12345"
+    "username": "admin",
+    "password": "1234"
 }
 
 ###
