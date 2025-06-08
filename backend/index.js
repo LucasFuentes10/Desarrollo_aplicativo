@@ -1,10 +1,8 @@
 import express from 'express';
-import { controllers } from './controllers/controllers.js';
-import { errorHandlerMiddleware } from './middlewares/Error_handler_middleware.js';
-import { logMiddleware } from './middlewares/log.middleware.js';
 import  config  from './config.js';
 import mongoose from 'mongoose';
 import configureDependencies from './configure_dependencies.js';
+import configMiddlewares from './configure_Middlewares.js';
 
 if (!config.jwtKey){
     console.error('Falta la variable de entorno JWT_KEY en la configuracion. Porfavor, revisa el archivo config.js');
@@ -21,11 +19,8 @@ const router = express.Router();
 app.use('/api', router);
 
 router.use(express.json());
-router.use(logMiddleware);
 
-controllers(router);
-
-router.use(errorHandlerMiddleware);
+configMiddlewares(router);
 
 configureDependencies();
 
