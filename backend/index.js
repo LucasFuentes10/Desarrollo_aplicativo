@@ -18,8 +18,6 @@ const app = express();
 const router = express.Router();
 app.use('/api', router);
 
-router.use(express.json());
-
 configMiddlewares(router);
 
 configureDependencies();
