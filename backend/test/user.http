@@ -13,3 +13,17 @@ GET http://localhost:3000/api/user
 Accept: application/json
 Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODNmNmYyYWQ5YjA5NGM3NzNmM2ZjYTAiLCJ1c2VybmFtZSI6ImFkbWluIiwiZnVsbE5hbWUiOiJBZG1pbmlzdHJhdG9yIiwicm9sZXMiOlsiYWRtaW4iXSwiaWF0IjoxNzQ5NTg2Nzk2LCJleHAiOjE3NDk1OTAzOTZ9.InCYQ0WfV8XJAQneNF1jCGR5nn2MeLrOECS4TL-njoA
 Content-type: application/json
+
+###
+
+POST http://localhost:3000/api/user
+Accept: application/json
+Content-Type: application/json
+
+{
+    "username":"operator",
+    "password":"1234",
+    "fullName":"Operator",
+    "roles":["operator"],
+    "email":"operator@fake.com",
+}
