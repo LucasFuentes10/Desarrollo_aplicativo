@@ -1,14 +1,27 @@
 import{ useState } from 'react';
 import Form from './Form.jsx';
 import TextField from './TextField.jsx';
+import { login } from '../services/loginService.js';
+//import { useModal } from './Modal.jsx';
+//import { useSnackbar } from './Snackbar.jsx'
 
 export default function Login(){
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    //openModal('ingresando');
+    const [username, setUsername] = useState('1');
+    const [password, setPassword] = useState('2');
+   // const { open: openModal } = useModal();    
+    //const snackbar = useSnackbar();
 
-    function submit(){
-        alert('Llamar al backend con {username:"${username}", password:"${password}"}');
+    async function submit(){
+        const token = await login(username, password);
+        if (token) {
+            snackbar.enqueue('Ingreso OK', (variant: 'success', timeout: 6000));
+        }else {
+            snactbar.enqueue('Error de ingreso', {variant: 'Error', timeout: 6000});
+        }
+
     }
+
     return (
         <Form
             title="Iniciar sesión"
@@ -19,7 +32,8 @@ export default function Login(){
                 name="username"
                 required={true}
                 value={username}
-                onChange={e => setPassword(e.target.value)}
+                onChange={e => setUsername(e.target.value)}
+                
             />
             <TextField
                 label="Contraseña"
@@ -27,7 +41,7 @@ export default function Login(){
                 type="password"
                 required={true}
                 value={password}
-                onChange={e => setUsername(e.target.value)}      
+                onChange={e => setPassword(e.target.value)}     
             />    
         </Form>
     )

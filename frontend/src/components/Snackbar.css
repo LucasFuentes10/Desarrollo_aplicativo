@@ -1,0 +1,80 @@
+.snackbar-container{
+    position: fixed;
+    bottom: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color : black;
+    font-weight: bold;
+    font-size: 120%;
+}
+
+.snackbar-item{
+    position: relative;
+    border: .3em solid gray;
+    border-radius: .5em;
+    background-color: lightgray;
+    width: 18em;
+    margin: 0.5em 1em;
+    padding: .5em;
+    height: 2em;
+}
+
+.error{
+    border-color: darkred;
+    background-color: pink;
+    color: darkred;
+}
+
+.warning{
+    border-color: darkorange;
+    background-color: rgb(221, 221, 34);
+    color: darkorange;
+}
+
+.variant{
+    border-color: rgb(0, 0, 85);
+    background-color: lightblue;
+    color: rgb(0, 0, 85);
+}
+
+.success{
+    border-color: rgb(1, 58, 1);
+    background-color: lightgreen;
+    color: rgb(1, 58, 1);
+}
+
+.snackbar-item{
+    animation: sliderUp 0.4s ease-out ;
+}
+
+@keyframes slideUp{
+    from { 
+        opacity: 0;
+        height: 0;
+    }
+    to {
+        opacity: 1;
+        height: 2em;
+    }
+}
+
+.snackbar-item.hide{
+    animation: hide 0.4s ease-out forwards;
+}
+
+@keyframes hide {
+    from {
+        opacity: 1;
+        left: 0;
+        height: 2em;
+        margin: .5em 1em;
+        padding: .5em;
+    }
+    to{
+        opacity: 0;
+        left: -20em;
+        height: 0;
+        margin: -1em;
+    }
+}
